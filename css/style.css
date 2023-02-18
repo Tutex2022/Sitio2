@@ -6,24 +6,24 @@
 .logo{
     height: 60px;
 }
-h1{
-    text-align: center;
-    padding-left: 200px;
-    padding-right: 200px;
-}
 
 header{
     display: flex;
     flex-direction: row;
-    padding-left: 100px;
-    padding-right: 100px;
-    
-    
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 h1{
-    margin-left: 200px;
-    margin-right: 200px;
+    text-align: center;
+    padding-left: 40%;
+    padding-right: 40%;
+}
+
+h2{
+    text-align:center;
+    padding-left: 40%;
+    padding-right: 40%;
 }
 
 .botond{
@@ -42,42 +42,22 @@ form{
     margin-left: 20px;
     margin-right: 20px;
 }
-.card-body{
-    height: 170px;
-}
 
-.card-body2{
-    display: flex;
-    flex-direction: row;
-    margin-left: 15px;
-}
 
-.card-body2 p{
-    margin-right: 50px;
-}
-
-.tarjetas{
-    display: flex;
-    flex-direction: row;
-    margin-left: 0px;
-    margin-bottom: 100px;
-}
-.card{
-    margin-left: 25px;
-}
 footer a{
     margin-left: 10px;
     padding: 20px;
 }
 footer{
-    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: row;
-    align-items: end;
 }
 
 footer p{
-    margin-left: 800px;
+    position: relative;
+    left: 60%;
 }
 
 .contact{
@@ -91,3 +71,8 @@ footer p{
     margin-left: 10%;
     margin-bottom: 40px;
 }
+
+.card5{
+    margin-right:20%;
+}
+
