@@ -53,6 +53,7 @@ footer{
     margin-bottom: 40px;
     display: flex;
     flex-direction: row;
+    
 }
 
 footer p{
@@ -81,3 +82,11 @@ footer p{
     box-shadow: inset 3px -3px 10px 0px gray;
 }
 
+.alinear{
+    display: flex;
+    flex-direction: row;
+}
+
+.checkbox{
+    margin-left: 150px;
+}

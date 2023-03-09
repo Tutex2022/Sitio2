@@ -171,3 +171,37 @@ let data = {
       }
     ]
   };
+
+  function tarjeta(event) {
+    let tarjeta = `<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-2">
+    <div class="card shadow">
+      <img src="${event.image}" height="160" class="card-img-top" alt="personas mirando">
+      <div class="card-body">
+        <h5 class="card-title">${event.name}</h5>
+        <p class="card-text">${event.description}</p>
+      </div>
+      
+      <div class="card-body">
+        <p>$ ${event.price}</p>
+        <a href="./details.html?id=${event._id}">More</a>
+      </div>
+    </div>
+  </div>`
+  
+  return tarjeta;
+  };
+  
+  let categorias = [];
+data.events.forEach(evento => {
+  if (!categorias.includes(evento.category)) {
+    categorias.push(evento.category)
+  }
+});
+
+function createCheckbox(category) {
+  let check = `<div class="form-check form-check-inline p-2">
+  <input class="form-check-input" type="checkbox" id="${category}" value="${category}">
+  <label class="form-check-label" for="inlineCheckbox1">${category}</label>
+</div>`;
+return check;
+};
