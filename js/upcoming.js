@@ -1,49 +1,34 @@
+let data = localStorage.getItem("data")
+data = JSON.parse(data)
+
+let eventosProximos = [];
+let currentDate = new Date(data.currentDate);
+data.events.forEach(event => {
+    let eventDate = new Date(event.date);
+    if (eventDate > currentDate) {
+        eventosProximos.push(event)
+    }
+});
+
+
 function crearTarjeta() {
 let htmlEvents = "";
-
 let currentDate = new Date(data.currentDate);
 for (let event of data.events) {
     let eventDate = new Date(event.date);
     if (eventDate > currentDate) {
-          
-      htmlEvents += tarjeta(event);
+         htmlEvents += tarjeta(event);
     };
   };
-
   document.querySelector('.row').innerHTML = htmlEvents
-}
-
-crearTarjeta();
-let listaCategorias ="";
-let checkContendor = document.querySelector(".checkbox");
-for(let categoria of categorias){
-  listaCategorias += createCheckbox(categoria)
-}
-
-checkContendor.innerHTML = listaCategorias;
-
-let Checks = document.querySelectorAll(".form-check-input");
-for (let check of Checks) {
-    check.addEventListener('change', () => {
-        let checkeados = [];
-        for (let chk of Checks) {
-            if (chk.checked) {
-                checkeados.push(chk.value)
-            };
-        };
-
-        if ( checkeados.length > 0) {
-            let htmlEvents = "";
-            let cardContainer = document.querySelector(".row");
-            for(let elemento of checkeados) {
-                data.events.filter(evento => elemento == evento.category).forEach(evento => { htmlEvents += tarjeta(evento) });
-            };
-            cardContainer.innerHTML = htmlEvents;
-        } else {
-            crearTarjeta();
-        };
-    });
 };
+crearTarjeta();
+
+
+
+/*Insertar checkbox*/
+
+insertarCheckbox();
 
 /*Buscar con Filtro*/
 

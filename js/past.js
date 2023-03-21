@@ -1,3 +1,6 @@
+let data = localStorage.getItem("data")
+data = JSON.parse(data)
+
 function crearTarjeta() {
 let htmlEvents = "";
 
@@ -12,39 +15,13 @@ for (let event of data.events) {
 
   document.querySelector('.row').innerHTML = htmlEvents
 }
-
 crearTarjeta();
-let listaCategorias ="";
-let checkContendor = document.querySelector(".checkbox");
-for(let categoria of categorias){
-  listaCategorias += createCheckbox(categoria)
-}
-
-checkContendor.innerHTML = listaCategorias;
 
 
-let Checks = document.querySelectorAll(".form-check-input");
-for (let check of Checks) {
-    check.addEventListener('change', () => {
-        let checkeados = [];
-        for (let chk of Checks) {
-            if (chk.checked) {
-                checkeados.push(chk.value)
-            };
-        };
+/*Insertar checkbox*/
 
-        if ( checkeados.length > 0) {
-            let htmlEvents = "";
-            let cardContainer = document.querySelector(".row");
-            for(let elemento of checkeados) {
-                data.events.filter(evento => elemento == evento.category).forEach(evento => { htmlEvents += tarjeta(evento) });
-            };
-            cardContainer.innerHTML = htmlEvents;
-        } else {
-            crearTarjeta();
-        };
-    });
-};
+insertarCheckbox();
+
 
 /*Buscar con Filtro*/
 
